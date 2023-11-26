@@ -1,0 +1,121 @@
+/* 
+Ways of calls:
+tag{}
+tag.class{}
+#id{}
+.class tag tag{}
+*/
+
+/*  To Define general attributes for the webpage*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+/*  To Define general backgroun color for the body*/
+body{
+    /*background: #efefef;*/
+    background: #e6deb6;
+}
+
+/*  To Define size of class icon inside tag img*/
+img.icon{
+    width: 40px;
+    height: auto;
+}
+
+nav{
+    display: flex; /*  To organize and align elements inside THIS container
+    using flexbox layout properties*/
+    align-items: center; /* Flex container property: To align their middles inside it*/
+    justify-content: space-between; /*Flex container property: To distribute child elements
+    evenly along the main axis with equal space between them*/
+    background: #00547a; /* Can define a combination of background properties
+    in a single declaration*/
+    padding: 5px 5%; /*It defines the amount of space
+    between the content of an element and its border
+    5px for top and bottom
+    5% for right and left side
+    */
+}
+
+.logo{
+    width: 160px; /*To determine the width, if only it is use, the height will be auto*/
+    margin-right: 45px; /*To have an space to the right side*/
+}
+
+.nav-left, .nav-right{
+    display: flex; /*Will show img and ul in one row with the saime high*/
+    align-items: center; /*Will aling img and ul to the center with its defined size*/
+}
+
+.nav-left ul li{
+    list-style: none; /*To remove the dots to all the li*/
+    display: inline-block; /*To display ul and li in just one line*/
+    /*
+    inline: To display element in the same line
+    block: Do not allow other elements to sit beside them
+    inline-block: Combine both of them
+    When an element has "block" properties, it could be assignet with
+    width, height, margin, padding, border
+    */
+}
+
+.nav-left ul li img{
+    width: 28px; /*Rezise the width of each element*/
+    margin: 0 15px; /*Add a margin to each element*/
+}
+
+.nav-user-icon img{
+    width: 40px;
+    border-radius: 50%; /*To add border to the element,
+    50% made it a circle*/
+    cursor: pointer;
+}
+
+.nav-user-icon{
+    margin-left: 30px; /*To add space to the left of the icon
+    and create an space between the search input and the icon*/
+}
+
+.search-box{
+    background: #efefef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.search-box img{
+    width: 18px;
+}
+
+.search-box input{
+    width: 100%; /*With 100% it will use all width element can*/
+    background: transparent; /*It will make the background the same as the image*/
+    padding: 10px;
+    outline: none; /*To remove the focus of an element when ypu click it
+    It will allow us think the icon and the input are the same object*/
+    border: 0; /*It will remove the border, so it seems the input is not marked inside a quarter,
+    in fact inside the icon box*/
+}
+
+.online{
+    position: relative; /*keeps the element in the document flow and
+    allows you to make adjustments relative to its original position.*/
+}
+
+.online::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute; /*akes the element out of the document flow and
+    positions it relative to its closest positioned ancestor or the initial containing block*/
+    top: 0;
+    right: 0;
+}
