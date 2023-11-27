@@ -38,6 +38,9 @@ nav{
     5px for top and bottom
     5% for right and left side
     */
+    position: sticky; /*To remain stuck after scrolling, need to be followd bt top, bottom, right or left to work*/
+    top: 0; /*Necessary when using position: sticky*/
+    z-index: 100; /*To be positioned in front of lower z-index*/
 }
 
 .logo{
@@ -81,7 +84,7 @@ nav{
 
 .search-box{
     background: #efefef;
-    width: 350px;
+    width: 150px; /*350px;*/
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -118,4 +121,70 @@ nav{
     positions it relative to its closest positioned ancestor or the initial containing block*/
     top: 0;
     right: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+}
+
+.left-sidebar{
+    /*background: #cbdffa;*/ /*This was added only to identify the column we added*/
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    /*height: 100vh;*/
+}
+
+.right-sidebar{
+    flex-basis: 25%; /*To specifi the initial main size of a flex item
+    before the remaining space is distributed among the flex items*/
+    position: sticky;
+    top: 70px;
+    align-self: flex-start; /*Overwrite align-items to be use inside thie element
+    (which belongs to a flex container)*/
+    /*height: 100vh;*/  /*vh stand for Viewport Hight, 100 is 100% of it
+    It ensures that the element will allways cover the entire height of the user screen
+    proving a consistent and immersive experience.*/
+}
+
+.main_content{
+    flex-basis: 47%;
+    /*height: 100vh;*/
+}
+
+.imp-links a, .shortcut-links a{
+    text-decoration: none; /*To remove underlines*/
+    display: flex; /*To align it in 1 column*/
+    align-items: center; /*To align to the center of each row of the column*/
+    margin-bottom: 30px; /*Margin on the bottom part of each element*/
+    color: #626262; /*Color of each element*/
+    width: fit-content;
+}
+
+.imp-links a img{
+    width: 25px;
+    margin-right: 15px;
+}
+
+.imp-links a:last-child{
+    color: #1876f2
+}
+
+.imp-links {
+    border-bottom: 1px solid #ccc;
+}
+
+.shortcut-links a img{
+    width: 40px;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.shortcut-links p{
+    margin: 25px 0;
+    color: #626262;
+    font-weight: 500; /*Negrita*/
 }
